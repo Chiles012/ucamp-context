@@ -3,16 +3,21 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { UserContext } from './context/userContex';
 
 function App() {
 
   const [user, setUser] = useState(null);
   const [token, setToken] = useState('');
 
+  const { 
+    userContex
+  } = useContext(UserContext)
+
   useEffect(() => {
-    console.log(user, token);
-  }, [user, token]);
+    console.log(userContex);
+  }, [userContex])
 
   return (
     <div className="App">
@@ -31,7 +36,6 @@ function App() {
               </h1>
             }></Route>
           }
-          
         </Routes>
       </BrowserRouter>
     </div>
