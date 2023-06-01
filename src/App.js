@@ -5,6 +5,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useContext, useEffect, useState } from 'react';
 import { UserContext } from './context/userContex';
+import Checkout from './pages/Checkout';
 
 function App() {
 
@@ -36,6 +37,7 @@ function App() {
               </h1>
             }></Route>
           }
+          <Route path='/checkout' Component={Checkout} />
         </Routes>
       </BrowserRouter>
     </div>
